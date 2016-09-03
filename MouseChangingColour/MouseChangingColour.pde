@@ -11,5 +11,5 @@ void draw(){
 void mousePressed(){
     background(random(0, 255), random(0, 255), random(0, 255));
     fill(random(0, 255), random(0, 255), random(0, 255));
-    text("Hello World!", 450, 400);
+    text("Hello World!", mouseX, mouseY);
 }
