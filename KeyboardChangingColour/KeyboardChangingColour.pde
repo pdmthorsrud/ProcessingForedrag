@@ -1,31 +1,15 @@
-import processing.core.*; 
-import processing.data.*; 
-import processing.event.*; 
-import processing.opengl.*; 
-
-import java.util.HashMap; 
-import java.util.ArrayList; 
-import java.io.File; 
-import java.io.BufferedReader; 
-import java.io.PrintWriter; 
-import java.io.InputStream; 
-import java.io.OutputStream; 
-import java.io.IOException; 
-
-public class MouseChangingColour extends PApplet {
-
-public void setup(){
-  
+void setup(){
+  size(900, 800);
   background(0, 0, 0);
   textAlign(CENTER);
   textSize(40);
 }
 
-public void draw(){
+void draw(){
 }
 
 //if a key is pressed, what is inside here will run
-public void keyPressed(){
+void keyPressed(){
     //change both background and text to random colors
     background(random(0, 255), random(0, 255), random(0, 255));
     fill(random(0, 255), random(0, 255), random(0, 255));
@@ -54,14 +38,4 @@ public void keyPressed(){
       fill(0, 0, 255);
       text("Hello World!", 450, 400);
     }
-}
-  public void settings() {  size(900, 800); }
-  static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "MouseChangingColour" };
-    if (passedArgs != null) {
-      PApplet.main(concat(appletArgs, passedArgs));
-    } else {
-      PApplet.main(appletArgs);
-    }
-  }
 }
