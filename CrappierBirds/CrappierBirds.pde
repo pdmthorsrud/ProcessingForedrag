@@ -7,7 +7,7 @@ PImage birdImg;
 PImage wallImg;
 PImage startImg;
 
-//gamestate used to see wether we are at startscreen or playing
+//gamestate used to see whether we are at startscreen or playing
 //x and y is bird's position. vy is the velocity of the bird
 int gamestate = 1, score = 0, highScore = 0, x = -200, y, vy = 0, wx[] = new int[2], wy[] = new int[2];
 void setup() {
@@ -26,39 +26,39 @@ void draw() { //runs 60 times a second
   if(gamestate == 0) {
     //The reason we put up two of the backimg is so that it will always cover
     //the whole screen. The backimg has been drawn so that it will line up
-    //perfectly
+    //perfectly when drawing to of them side by side
     imageMode(CORNER);
     image(backImg, x, 0);
     image(backImg, x+backImg.width, 0);
 
-    //x -= 6 will move the background image to the left (see above, where we
+    //x -= 6 will move the background image 6 pixels to the left (see above, where we
     //use x to place the image). Next iteration of draw, the background image
-    //will be placed 6 pixels further to the left, giving illusion of movement
+    //will be placed 6 pixels further to the left, giving the illusion of movement
     x -= 6;
-    //this increases how large vy is each time. vy is how "fast" the bird drops.
+    //vy += 1 increases vy every time draw is called.
     //In other words, we increase how fast the bird drops every time we call
-    //draw() (which happens 60 times a second)
+    //draw() (which happens 60 times a second). This is a simulation of gravity
     vy += 1;
-    //increasing y will make the bird appear at a lower point
+    //Increasing y will make the bird appear at a lower point (bird falling)
     //because we always place the bird at x, y. The higher y is, the lower on
     //the screen it will be placed
     y += vy;
 
-    //this if sentence checks if we're at the end of our bckimage. If we are,
-    //we simply reset where the backimage is drawn
+    //This if sentence checks if we're at the end of our bckimage. If we are,
+    //we simply reset where the backimage is drawn.
     if(x == -1800){
       x = 0;
     }
 
-    //this draws the two walls. Notice that there's always two walls visible
+    //This draws the two walls. Notice that there's always two walls visible
     //in our game.
     for(int i = 0 ; i < 2; i++) {
       imageMode(CENTER);
-      //this places two walls with a space of 200 pixels between them.
+      //Places two walls with a space of 200 pixels between them.
       image(wallImg, wx[i], wy[i] - (wallImg.height/2+100));
       image(wallImg, wx[i], wy[i] + (wallImg.height/2+100));
 
-      //when one pair of walls goes out of the picture on the left,
+      //When one pair of walls goes out of the picture on the left,
       //we create a new pair of walls that start at the right side
       //(wx[i] = width), and with a randomly placed hole
       //(wy[i] = (int)random(200,height-200)).
@@ -67,10 +67,10 @@ void draw() { //runs 60 times a second
         wx[i] = width;
       }
 
-      //if a wall is at the middle point, it means the bird is about to
+      //If a wall is at the middle point, it means the bird is about to
       //"pass" the wall.
       if(wx[i] == width/2){
-        //we add to our score
+        //We add to our score
         score++;
         //and we check if current score is higher than the highScore and set
         //the highScore variable equal to the highest of the variables score
@@ -78,23 +78,23 @@ void draw() { //runs 60 times a second
         highScore = max(score, highScore);
       }
 
-      //if we go off the screen, or we hit one of the walls, it's gameOver,
+      //If we go off the screen, or we hit one of the walls, it's gameOver,
       //and we set gamestate to 1
       if(y>height || y<0 || (abs(width/2-wx[i])<25 && abs(y-wy[i])>100)){
         gamestate=1;
       }
 
-      //this moves the pair of walls to the left (just like bckimage)
+      //This moves the pair of walls to the left (just like bckimage)
       wx[i] -= 6;
     }
 
-    //we draw the bird. Notice we use y here, which is the variable we change
+    //We draw the bird. Notice we use y here, which is the variable we change
     //with the help of vy above
     image(birdImg, width/2, y);
-    //prints the text to the screen
+    //Prints the text to the screen
     text(""+score, width/2-15, 700);
   }
-  //gamestate is equal to 1, and we're not playing.
+  //Gamestate is equal to 1, and we're not playing.
   else {
     imageMode(CENTER);
     //startimage is shown
@@ -106,13 +106,13 @@ void draw() { //runs 60 times a second
 
 
 void mousePressed() {
-  //we set vy to be negative. When vy is positive, the bird moves down.
+  //We set vy to be negative. When vy is positive, the bird moves down.
   //This means that when vy is negative, the bird moves up.
   //Remember that we always increase vy by one each time draw() is called,
-  //which means vy will rapidly move back to negative, and the bird will start
-  //dropping again
+  //which means vy will rapidly move back to positive, and the bird will start
+  //dropping again.
   vy = -17;
-  //if we weren't playing the game when pressing the mouse, we want to start
+  //If we weren't playing the game when pressing the mouse, we want to start
   //the game. We do this by reseting all the values used while playing the game
   if(gamestate==1) {
     wx[0] = 600;
