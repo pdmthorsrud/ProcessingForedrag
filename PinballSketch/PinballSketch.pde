@@ -14,9 +14,6 @@ void draw(){
   }else{
     background(0, 0, 0);
     fill(255, 255, 255);
-    text(mb.posBallY, 50, 50);
-    text(mb.posBallX, 70, 70);
-    text(posBat, 100, 100);
     mb.moveBall(posBat);
     drawBat();
   }
@@ -41,9 +38,9 @@ void gameOver(){
   textAlign(CENTER, CENTER);
   text("GAME OVER", 500, 250);
   textSize(25);
-  text("New Game (n)", 500, 310);
+  text("New Game (SPACE)", 500, 310);
   if(keyPressed){
-    if(key=='n'){
+    if(key==' '){
       newGame();
     }
   }
