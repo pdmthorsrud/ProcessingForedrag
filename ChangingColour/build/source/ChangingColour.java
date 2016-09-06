@@ -12,7 +12,7 @@ import java.io.InputStream;
 import java.io.OutputStream; 
 import java.io.IOException; 
 
-public class SkiftendeFarge extends PApplet {
+public class ChangingColour extends PApplet {
 
 public void setup(){
   
@@ -29,7 +29,7 @@ public void draw(){
 }
   public void settings() {  size(900, 800); }
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "SkiftendeFarge" };
+    String[] appletArgs = new String[] { "ChangingColour" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {

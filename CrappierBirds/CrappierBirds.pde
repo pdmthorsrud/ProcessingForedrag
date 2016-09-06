@@ -112,7 +112,7 @@ void mousePressed() {
   //which means vy will rapidly move back to positive, and the bird will start
   //dropping again.
   vy = -17;
-  //If we weren't playing the game when pressing the mouse, we want to start
+  //if we weren't playing the game when pressing the mouse, we want to start
   //the game. We do this by reseting all the values used while playing the game
   if(gamestate==1) {
     wx[0] = 600;

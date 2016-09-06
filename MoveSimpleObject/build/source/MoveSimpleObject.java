@@ -50,7 +50,7 @@ public void keyPressed(){
     y += yv;
   }else if(key=='w'){
     y -= yv;
-  }else if(key=='t'){
+  }else if(key==' '){
     gamestate = 0;
     reset();
   }
