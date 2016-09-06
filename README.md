@@ -1,10 +1,13 @@
 # ProcessingForedrag
 Files used for processing class 7th of september
 
-A lot of these .pde files are taken directly from Daniel Shiffman's github, which is all accompanying code for his awesome youtube videos.
-The code is VERY slightly modified, to suit the needs of sutdents attending my (Per Daniel Thorsrud) processing class the 7th of september.
-In other words, a lot of the code on here is credited Daniel Shiffman, and NOT me. Please pay the man a visit, and give him some love.
-He's awesome!! 
-
+The code for "FractalTree" is by Daniel Shiffman, slightly modified to in processing.
+Daniel Shiffman is awesome, and you should check out literally everything he's made. Like. Ever. 
 His youtube: https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw
 His github (where all this code was copied from): //github.com/CodingRainbow/Rainbow-Code 
+
+"CrappierBird" is originally by reddit user /u/CaptainScuttlebottom. 
+Original thread: https://www.reddit.com/r/learnprogramming/comments/1xfrjb/java_i_was_bored_yesterday_so_i_made_a_flappy/
+
+The code for "CrappierBird" is however from KTByte on youtube (if you didn't understand all of my explanations pay his tutorial a visit):
+https://www.youtube.com/watch?v=bV3joOueucg&index=5&list=FL4lg7-9Qdy6kP-nPftBVtAg
