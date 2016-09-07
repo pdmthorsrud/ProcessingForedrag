@@ -7,15 +7,16 @@ float angle = PI/6;
 String myText = "";
 
 void setup() {
-  size(400, 400);
+  size(1000, 1000);
+  strokeWeight(2);
 }
 
 void draw() {
   background(23, 98, 161);
   fill(84, 255, 159);
   translate(width/2, height);
-  branch(100);
-  text("Angle: " + myText, 90, 80);
+  branch(300);
+  text("Angle (radians): " + myText, 90, 250);
 }
 
 void branch(float len) {

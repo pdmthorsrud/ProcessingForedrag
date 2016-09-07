@@ -25,7 +25,9 @@ PImage startImg;
 
 //gamestate used to see whether we are at startscreen or playing
 //x and y is bird's position. vy is the velocity of the bird
-int gamestate = 1, score = 0, highScore = 0, x = -200, y, vy = 0, wx[] = new int[2], wy[] = new int[2];
+int gamestate = 1, score = 0, highScore = 0, x = -200, y, vy = 0;
+int wx[] = new int[2];
+int wy[] = new int[2];
 public void setup() {
   
   fill(0);

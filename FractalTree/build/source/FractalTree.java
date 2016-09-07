@@ -19,20 +19,20 @@ public class FractalTree extends PApplet {
 // http://patreon.com/codingrainbow
 // Code for: https://youtu.be/0jjeOYMjmDU
 
-//try changing this value for some interesting colors
 float angle = PI/6;
 String myText = "";
 
 public void setup() {
   
+  strokeWeight(2);
 }
 
 public void draw() {
   background(23, 98, 161);
   fill(84, 255, 159);
   translate(width/2, height);
-  branch(100);
-  text("Angle: " + myText, 90, 80);
+  branch(300);
+  text("Angle (radians): " + myText, 90, 250);
 }
 
 public void branch(float len) {
@@ -61,7 +61,7 @@ public void keyPressed() {
     myText = myText + key;
   }
 }
-  public void settings() {  size(400, 400); }
+  public void settings() {  size(1000, 1000); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "FractalTree" };
     if (passedArgs != null) {
