@@ -28,6 +28,7 @@ PImage startImg;
 int gamestate = 1, score = 0, highScore = 0, x = -200, y, vy = 0;
 int wx[] = new int[2];
 int wy[] = new int[2];
+
 public void setup() {
   
   fill(0);
@@ -44,7 +45,7 @@ public void draw() { //runs 60 times a second
   if(gamestate == 0) {
     //The reason we put up two of the backimg is so that it will always cover
     //the whole screen. The backimg has been drawn so that it will line up
-    //perfectly when drawing to of them side by side
+    //perfectly when putting two of them side by side
     imageMode(CORNER);
     image(backImg, x, 0);
     image(backImg, x+backImg.width, 0);
