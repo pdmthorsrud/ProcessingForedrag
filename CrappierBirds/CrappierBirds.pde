@@ -33,6 +33,7 @@ void draw() { //runs 60 times a second
     imageMode(CORNER);
     image(backImg, x, 0);
     image(backImg, x+backImg.width, 0);
+    background(random(255), random(255), random(255));
 
     //x -= 6 will move the background image 6 pixels to the left (see above, where we
     //use x to place the image). Next iteration of draw, the background image

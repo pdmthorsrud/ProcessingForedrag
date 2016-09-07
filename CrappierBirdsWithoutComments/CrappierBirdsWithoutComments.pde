@@ -56,8 +56,8 @@ void draw() { //runs 60 times a second
     }
 
   }else {
-    imageMode(CENTER);
-    image(startImg, width/2,height/2);
+    imageMode(CORNER);
+    image(startImg, 0, 0);
     text("High Score: "+highScore, 50, width);
   }
 }

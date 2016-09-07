@@ -14,17 +14,14 @@ import java.io.IOException;
 
 public class CrappierBirdsWithoutComments extends PApplet {
 
-//credit to reddit user /u/CaptainScuttlebottom
-//original thread: https://www.reddit.com/r/learnprogramming/comments/1xfrjb/java_i_was_bored_yesterday_so_i_made_a_flappy/
-
 PImage backImg;
 PImage birdImg;
 PImage wallImg;
 PImage startImg;
 
-int gamestate = 1, score = 0, highScore = 0, x = 0, y, vy = 0;
-int wx[] = new int[2];
-int wy[] = new int[2];
+int gamestate = 1, score = 0, highScore = 0, x = 0, y=height/2, vy = 0;
+int wx[] = {600, 900};
+int wy[] = {300, 600};
 
 public void setup() {
   
@@ -41,15 +38,15 @@ public void draw() { //runs 60 times a second
     imageMode(CORNER);
     image(backImg, x, 0);
     image(backImg, x+backImg.width, 0);
-    image(birdImg, width/2, y);
-
-    x -= 6;
-    vy += 1;
-    y += vy;
-
+    x-=6;
     if(x == -1800){
-      x = 0;
+      x=0;
     }
+
+    imageMode(CENTER);
+    image(birdImg, width/2, y);
+    vy+=1;
+    y+=vy;
 
     for(int i = 0 ; i < 2; i++) {
       imageMode(CENTER);
@@ -71,25 +68,29 @@ public void draw() { //runs 60 times a second
       }
 
       wx[i] -= 6;
+      text(score, 500, 700);
     }
-    text(""+score, width/2-15, 700);
+
   }else {
-    imageMode(CENTER);
-    image(startImg, width/2,height/2);
+    imageMode(CORNER);
+    image(startImg, 0, 0);
     text("High Score: "+highScore, 50, width);
   }
 }
 
 
-public void mousePressed() {
-  vy = -17;
-  if(gamestate==1) {
+public void mousePressed(){
+  if(gamestate==0){
+    vy=-17;
+  }else{
     wx[0] = 600;
     wy[0] = y = height/2;
     wx[1] = 900;
     wy[1] = 600;
     x = gamestate = score = 0;
+    vy=-17;
   }
+
 }
   public void settings() {  size(600,800); }
   static public void main(String[] passedArgs) {
