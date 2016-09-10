@@ -2,8 +2,8 @@
 // Daniel Shiffman
 // http://patreon.com/codingrainbow
 // Code for: https://youtu.be/0jjeOYMjmDU
+float angle;
 
-float angle = PI/6;
 String myText = "";
 
 void setup() {
@@ -12,6 +12,7 @@ void setup() {
 }
 
 void draw() {
+  angle = PI/6;
   background(23, 98, 161);
   fill(84, 255, 159);
   translate(width/2, height);
