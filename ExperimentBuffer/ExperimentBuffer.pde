@@ -1,19 +1,25 @@
-int x = 0;
+
+float x, y;
+float vy;
+float g;
+float f;
+
 void setup(){
   size(900, 800);
   background(255);
+
+  x = width/2;
+  y = height/2;
+
+  vy = 3;
 }
 
 void draw(){ //60 FPS
-  background(255, 0, 0);
-  rect( x, height/2, 100, 50);
-  textAlign(CENTER);
-  x+=6;
+  ellipse(x,y,r,r);
+
+  y = y*f;
 }
 
-void keyPressed(){
-
-}
 
 //void mousePressed(){
 //  background(random(255), random(255), random(255));

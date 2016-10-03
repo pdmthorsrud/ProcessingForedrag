@@ -23,7 +23,7 @@ public void setup(){
 public void draw(){
   background(random(0, 255), random(0, 255), random(0, 255));
   fill(random(0, 255), random(0, 255), random(0, 255));
-  textSize(40);
+  textSize(70);
   text("Hello World!", 450, 400);
   delay(500);
 }
