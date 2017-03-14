@@ -1,13 +1,26 @@
 # ProcessingForedrag
-Files and links used for processing class IT-camp for girl, 15th of March.
+Files and links used for processing class IT-camp for girls, 15th of March.
+
+
+I disse tutorialene vil du få veldig lite spesifikk informasjon, og dokumentene er heller ment for å kunne veilede deg i laging av dine egne spill. Spør en av lærerne om du lurer på noe eller sitter fast!
+
 
 Tasks:
 
-*[Pinball](/Oppgaveideer/Pinball.md)
-*[CrappierBird](/Oppgaveideer/CrappierBird.md) 
+* [Pinball](/Oppgaveideer/Pinball.md)
+* [CrappierBird](/Oppgaveideer/CrappierBird.md) 
 
 
 
+
+
+
+
+
+
+
+
+## Credits
 The code for "FractalTree" is by Daniel Shiffman, slightly modified to in processing.
 Daniel Shiffman is awesome, and you should check out literally everything he's made. Like. Ever. 
 His youtube: https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw
