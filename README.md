@@ -3,7 +3,8 @@ Files and links used for processing class IT-camp for girl, 15th of March.
 
 Tasks:
 
-* [Pinball](/Oppgaveideer/Pinball.md)
+*[Pinball](/Oppgaveideer/Pinball.md)
+*[CrappierBird](/Oppgaveideer/CrappierBird.md) 
 
 
 
