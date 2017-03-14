@@ -1,5 +1,11 @@
 # ProcessingForedrag
-Files used for processing class 7th of september
+Files and links used for processing class IT-camp for girl, 15th of March.
+
+Tasks:
+
+* [Pinball](/Oppgaveideer/Pinball.md)
+
+
 
 The code for "FractalTree" is by Daniel Shiffman, slightly modified to in processing.
 Daniel Shiffman is awesome, and you should check out literally everything he's made. Like. Ever. 
