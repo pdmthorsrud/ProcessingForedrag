@@ -26,6 +26,7 @@ void keyPressed(){
 }
 ```  
 
+<br ><br\ >
 2. Flott, da har vi baren som skal slå ballen. So far so good! Neste på lista er ballen vår. For å få denne til å bevege seg må vi gjøre det slik at ballens posisjon endrer seg for hver gang vi kjører gjennom `void draw`. Begynn med å få den til å gå diagonalt over skjermen. Når dette funker kan du legge til sjekker for å se om ballen har truffet noen av veggene, og endre retning deretter.  
 
 #### Nyttige funksjoner og tips
