@@ -47,7 +47,7 @@ void setup() {
 
 <br>
 <br>
-3. Start med koden hvor man spiller. Først skal bakgrunnen og fuglen tegnes. Fuglen skal være alltid være i midten av skjermen, og kun bevege seg vertikalt (loddrett). Med andre ord vil fuglen sin x-koordinat alltid være `width`. Å tegne bakgrunnsbildet er litt vanskeligere da vi skal få bildet til å bevege seg bortover. Trikset er å bruke `imageX` fra tidligere i koden vår. Hvis vi setter `imageMode(CORNER)` og deretter tegner bildet med `image(backImg, imageX, 0)` får vi et bilde som vil dekke skjermen vår. 
+3. Start med koden hvor man spiller. Først skal bakgrunnen og fuglen tegnes. Fuglen skal være alltid være i midten av skjermen, og kun bevege seg vertikalt (loddrett). Med andre ord vil fuglen sin x-koordinat alltid være ```width```. Å tegne bakgrunnsbildet er litt vanskeligere da vi skal få bildet til å bevege seg bortover. Trikset er å bruke `imageX` fra tidligere i koden vår. Hvis vi setter `imageMode(CORNER)` og deretter tegner bildet med `image(backImg, imageX, 0)` får vi et bilde som vil dekke skjermen vår. 
 
 #### Nyttige funksjoner og tips
 * `imageMode(CORNER)`
