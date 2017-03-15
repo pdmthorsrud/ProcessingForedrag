@@ -65,16 +65,16 @@ if(imageX == -1800){
 ```  
 <br><br>
 
-5. Neste på lista er fuglen vår. Slik det er nå står den stille, men den skal jo falle. Her bruker vi samme metode som i punkt 3.  
+5. Det må skrives kode for at fuglen skal falle. Her bruker vi samme metode som i punkt 3.  
 <br><br>
 
-6. Så fuglen vår faller, men den faller veldig stødig. Gravitasjon er en flott ting som også trengs i spill. Hvis vi skal oversette gravitasjon til "spillspråk" kan man si at det er en kraft som øker hastigheten til et objekt for hver gang vi kjører gjennom `void draw()` metoden vår. Vi må andre ord øke hvor "mye" fuglen faller med, for hver gang vi kjører gjennom. Se om du klarer å løse problemet, hvis ikke kan du spørre en av lærerne om hint!  
+6. Nå faller fuglen, men den gjør det sakte og stødig. Gravitasjon er en flott ting som også trengs i spill. Hvis vi skal oversette gravitasjon til "spillspråk" kan det tenkes på som en kraft som øker hastigheten til et objekt for hver gang `void draw()` blir kjørt. Fuglen må med andre ord flyttes lenger ned enn forrige gang `void draw()` ble kjørt. Se om du klarer å løse problemet, hvis ikke kan du spørre en av lærerne om hint!  
 <br><br>
 
-7. Det vi nå mangler er hindre som vi skal komme gjennom, og en måte å få fuglen vår til å fly på. Vi begynner med hindrene. For å spare tid vil jeg her gi deg koden, men er det noe du ikke skjønner så rop på en av lærerne!  
+7. Det vi nå mangler er hindre, få fuglen til å fly, og en gameover skjerm. Vi begynner med hindrene. For å spare tid vil jeg her gi deg koden, men er det noe du ikke skjønner så rop på en av lærerne!  
 
 #### Nyttige funksjoner og tips
-* Denne koden kan limes inn rett under koden for fuglen.
+* Denne koden kan limes inn rett under koden for fuglen. Linjer som starter med `//` vil bli ignorert av processing.
 
 ``` processing
 //This draws the two walls. Notice that there's always two walls visible
@@ -114,5 +114,24 @@ for(int i = 0 ; i < 2; i++) {
   //This moves the pair of walls to the left (just like bckimage)
   wx[i] -= 6;
 }
-```
+```  
+<br><br>
+
+8. Start spillet! Bruk `void mousePressed(){}` for å kjøre kode hvis venstre musetast blir trykket. Dette skal utenfor både `void setup()` og `void draw()`. Inni trenger vi en if-setning som sjekker om vi spiller eller er i "GAMEOVER" modus. Du kan lime inn koden nedenfor, som vil resette alle variabler og starte spillet for oss, men kun hvis vi ikke spiller idet tasten blir trykket.
+
+#### Nyttige funksjoner og tips
+* Copypaste kode:
+
+``` processing
+if(gamestate==1) {
+  wx[0] = 600;
+  wy[0] = y = height/2;
+  wx[1] = 900;
+  wy[1] = 600;
+  x = gamestate = score = 0;
+}
+```  
+<br><br>
+
+9. Få fuglen til å fly! Før if-setningen vår i `mousePressed` trengs EN linje kode. Fuglen trenger et "oppdrift", noe som motvirker tyngdekraften. Lettere sagt så skal "tyngdekraft-variabelen" bli "reversert". Denne er vanskelig å finne ut av, men prøv en stund før du spør læreren!
 
