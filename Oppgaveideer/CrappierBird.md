@@ -34,7 +34,7 @@ void setup() {
   startImg=loadImage("http://i.imgur.com/U6KEwxe.png");
 }
 ```  
-<br><br\>
+<br><br>
 
 2. Foreløpig skal vi skrive i `draw()` metoden. Første steg er å lage en if-setning som sjekker om det er gameover. Er det gameover så vil vi tegne startImg på skjermen.  
 
