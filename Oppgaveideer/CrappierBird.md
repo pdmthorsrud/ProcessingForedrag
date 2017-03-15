@@ -123,7 +123,7 @@ for(int i = 0 ; i < 2; i++) {
 * Copypaste kode:
 
 ``` processing
-if(gamestate==1) {
+if(!gameover) {
   wx[0] = 600;
   wy[0] = y = height/2;
   wx[1] = 900;
