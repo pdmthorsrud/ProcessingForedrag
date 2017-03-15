@@ -54,4 +54,25 @@ void setup() {
 
 <br>
 <br>
-3. La oss starte med koden hvor vi spiller. Først tegner vi bakgrunnen og fuglen vår. Fuglen skal være i midten av skjermen, og vil alltid bevege seg opp og ned i midten. Med andre ord vil fuglen sin x-koordinat alltid være `width/2`. Å tegne bakgrunnsbildet er litt vanskeligere da vi skal få bildet til å bevege seg bortover. Trikset er å bruke `imageX` fra tidligere i koden vår. Hvis vi setter `imageMode(CENTER)` og deretter tegner bildet med `image(backImg, imageX, 0)` får vi et bilde som vil dekke skjermen vår. Bevegelse kan vi skape ved å legge til linjen `x = x-6` etter vi har tegnet bildet. Neste gang vi kjører gjennom `draw()` og kjører koden `image(backImg, imageX, 0)` vil vi tegne bildet vårt 6 pixler lenger til venstre. Neste gang 12 pixler til venstre, osv.
+3. La oss starte med koden hvor vi spiller. Først tegner vi bakgrunnen og fuglen vår. Fuglen skal være i midten av skjermen, og vil alltid bevege seg opp og ned i midten. Med andre ord vil fuglen sin x-koordinat alltid være `width/2`. Å tegne bakgrunnsbildet er litt vanskeligere da vi skal få bildet til å bevege seg bortover. Trikset er å bruke `imageX` fra tidligere i koden vår. Hvis vi setter `imageMode(CORNER)` og deretter tegner bildet med `image(backImg, imageX, 0)` får vi et bilde som vil dekke skjermen vår. 
+
+#### Nyttige funksjoner og tips
+* `imageMode(CORNER)`
+* `image(backImg, x-koordinat, y-koordinat)`
+* `image(birdImg, x-koordinat, y-koordinat)`  
+
+<br>
+<br>
+4. Bevegelse kan vi skape ved å legge til linjen `imageX = imageX-6` etter vi har tegnet bildet. Neste gang vi kjører gjennom `draw()` og kjører koden `image(backImg, imageX, 0)` vil vi tegne bildet vårt 6 pixler lenger til venstre. Neste gang 12 pixler til venstre, osv. Lar du programmet ditt nå kjøre lenge nok vil du se at bildet før eller siden slutter. Bildet vårt er derimot tegnet slik at start og slutt passer sammen, og vi kan derfor tegne et nytt bilde på enden med `image(backImg, imageX + backImg.width, 0)`. For å spare tid kan du kopiere koden nedenfor. Se om du skjønner hvorfor vi trenger if-setningen!
+
+#### Nyttige funksjoner og tips
+* Legg til etter første linjen som tegner første bildet
+
+``` processing
+image(backImg, x+backImg.width, 0);
+x-=6;
+if(x == -1800){
+  x=0;
+}
+```
+
