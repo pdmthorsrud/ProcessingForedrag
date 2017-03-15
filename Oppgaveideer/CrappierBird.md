@@ -69,10 +69,22 @@ void setup() {
 * Legg til etter første linjen som tegner første bildet
 
 ``` processing
-image(backImg, x+backImg.width, 0);
-x-=6;
-if(x == -1800){
-  x=0;
+image(backImg, imageX+backImg.width, 0);
+imageX = imageX - 6;
+if(imageX == -1800){
+  imageX=0;
 }
-```
+```  
+
+<br>
+<br>
+5. Neste på lista er fuglen vår. Slik det er nå står den stille, men den skal jo falle. Her bruker vi samme metode som i punkt 3.  
+
+<br>
+<br>
+6. Så fuglen vår faller, men den faller veldig stødig. Gravitasjon er en flott ting som også trengs i spill. Hvis vi skal oversette gravitasjon til "spillspråk" kan man si at det er en kraft som øker hastigheten til et objekt for hver gang vi kjører gjennom `void draw()` metoden vår. Vi må andre ord øke hvor "mye" fuglen faller med, for hver gang vi kjører gjennom. Se om du klarer å løse problemet, hvis ikke kan du spørre en av lærerne om hint!
+
+<br>
+<br>
+7. Det vi nå mangler er hindre som vi skal komme gjennom, og en måte å få fuglen vår til å fly på. Vi begynner med hindrene. For å spare tid vil jeg her gi deg koden, men er det noe du ikke skjønner så rop på en av lærerne! Denne koden kan limes inn rett under 
 
