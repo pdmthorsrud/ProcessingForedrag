@@ -37,7 +37,7 @@ void setup() {
 
 <br>
 <br>
-2. Fra nå av skal vi holde oss inne i draw-metoden vår. Første steg er å lage en if-setning som sjekker om det er gameover. Er det gameover så vil vi tegne startImg på skjermen.  
+2. Foreløpig skal vi skrive i `draw()` metoden vår. Første steg er å lage en if-setning som sjekker om det er gameover. Er det gameover så vil vi tegne startImg på skjermen.  
 
 #### Nyttige funksjoner og tips
 * `imageMode(CORNER)`, bildene vi tegner vil ta utgangspunkt i hjørnet av bildet når vi bruker x og y.
@@ -47,7 +47,7 @@ void setup() {
 
 <br>
 <br>
-3. La oss starte med koden hvor vi spiller. Først tegner vi bakgrunnen og fuglen vår. Fuglen skal være i midten av skjermen, og vil alltid bevege seg opp og ned i midten. Med andre ord vil fuglen sin x-koordinat alltid være `width/2`. Å tegne bakgrunnsbildet er litt vanskeligere da vi skal få bildet til å bevege seg bortover. Trikset er å bruke `imageX` fra tidligere i koden vår. Hvis vi setter `imageMode(CORNER)` og deretter tegner bildet med `image(backImg, imageX, 0)` får vi et bilde som vil dekke skjermen vår. 
+3. Start med koden hvor man spiller. Først skal bakgrunnen og fuglen tegnes. Fuglen skal være alltid være i midten av skjermen, og kun bevege seg vertikalt (loddrett). Med andre ord vil fuglen sin x-koordinat alltid være `width/2`. Å tegne bakgrunnsbildet er litt vanskeligere da vi skal få bildet til å bevege seg bortover. Trikset er å bruke `imageX` fra tidligere i koden vår. Hvis vi setter `imageMode(CORNER)` og deretter tegner bildet med `image(backImg, imageX, 0)` får vi et bilde som vil dekke skjermen vår. 
 
 #### Nyttige funksjoner og tips
 * `imageMode(CORNER)`
