@@ -43,7 +43,7 @@ void setup() {
 * `image(startImg, x-koordinat, y-koordinat)`  
 <br><br>
 
-3. Start med koden hvor man spiller. Først skal bakgrunnen og fuglen tegnes. Fuglen skal være alltid være i midten av skjermen, og kun bevege seg vertikalt (loddrett). Med andre ord vil fuglen sin x-koordinat alltid være `width/2`. Å tegne bakgrunnsbildet er litt vanskeligere da vi skal få bildet til å bevege seg bortover. Trikset er å bruke `imageX` fra tidligere i koden vår. Hvis vi setter `imageMode(CORNER)` og deretter tegner bildet med `image(backImg, imageX, 0)` får vi et bilde som vil dekke skjermen vår.  
+3. Start med koden hvor man spiller. Først skal bakgrunnen og fuglen tegnes. Fuglen skal alltid være i midten av skjermen, og den skal kun bevege seg vertikalt (loddrett). Fuglen sin x-koordinat vil dermed alltid være `width/2`. Å tegne bakgrunnsbildet er litt vanskeligere da vi skal få bildet til å bevege seg bortover. Begynn med et stillestående bilde. Sett `imageMode(CORNER)` og deretter tegn bildet med `image(backImg, imageX, 0)`. Du har nå et bilde som dekker hele skjermen.  
 
 #### Nyttige funksjoner og tips
 * `imageMode(CORNER)`
@@ -51,7 +51,7 @@ void setup() {
 * `image(birdImg, x-koordinat, y-koordinat)`  
 <br><br>
 
-4. Bevegelse kan vi skape ved å legge til linjen `imageX = imageX-6` etter vi har tegnet bildet. Neste gang vi kjører gjennom `draw()` og kjører koden `image(backImg, imageX, 0)` vil vi tegne bildet vårt 6 pixler lenger til venstre. Neste gang 12 pixler til venstre, osv. Lar du programmet ditt nå kjøre lenge nok vil du se at bildet før eller siden slutter. Bildet vårt er derimot tegnet slik at start og slutt passer sammen, og vi kan derfor tegne et nytt bilde på enden med `image(backImg, imageX + backImg.width, 0)`. For å spare tid kan du kopiere koden nedenfor. Se om du skjønner hvorfor vi trenger if-setningen!  
+4. Bevegelse kan skapes ved å legge til linjen `imageX = imageX-6` etter linjen som tegner bildet. Neste gang vi kjører gjennom `draw()` og koden `image(backImg, imageX, 0)` kjøres vil bildet bli tegnet 6 pixler lenger til venstre. Neste gang 12 pixler til venstre, osv. Lar du programmet kjøre lenge nok vil du se at bildet før eller siden slutter, så det må fikses. Bildet er tegnet slik at start og slutt passer sammen, og man kan derfor tegne et nytt bilde på enden av det første med `image(backImg, imageX + backImg.width, 0)`. For å spare tid kan du kopiere koden nedenfor. Se om du skjønner hvorfor vi trenger if-setningen!  
 
 #### Nyttige funksjoner og tips
 * Legg til etter første linjen som tegner første bildet
@@ -65,10 +65,10 @@ if(imageX == -1800){
 ```  
 <br><br>
 
-5. Det må skrives kode for at fuglen skal falle. Her bruker vi samme metode som i punkt 3.  
+5. Det må skrives kode for at fuglen skal falle. Her brukes metode som i punkt 3.  
 <br><br>
 
-6. Nå faller fuglen, men den gjør det sakte og stødig. Gravitasjon er en flott ting som også trengs i spill. Hvis vi skal oversette gravitasjon til "spillspråk" kan det tenkes på som en kraft som øker hastigheten til et objekt for hver gang `void draw()` blir kjørt. Fuglen må med andre ord flyttes lenger ned enn forrige gang `void draw()` ble kjørt. Se om du klarer å løse problemet, hvis ikke kan du spørre en av lærerne om hint!  
+6. Nå faller fuglen, men den gjør det sakte og stødig. Gravitasjon er en flott ting som også trengs i spill. Hvis vi skal oversette gravitasjon til "spillspråk" kan du tenke på en kraft som øker hastigheten til et objekt for hver gang `void draw()` blir kjørt. Fuglen må med andre ord flyttes lenger ned enn forrige gang `void draw()` ble kjørt. Se om du klarer å løse problemet, hvis ikke kan du spørre en av lærerne om hint!  
 <br><br>
 
 7. Det vi nå mangler er hindre, få fuglen til å fly, og en gameover skjerm. Vi begynner med hindrene. For å spare tid vil jeg her gi deg koden, men er det noe du ikke skjønner så rop på en av lærerne!  
