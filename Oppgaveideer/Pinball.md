@@ -1,8 +1,9 @@
 # Hvordan lage pinball!
 
-## Steg for steg
+## Steg for steg  
 
-
+<br>
+<br>
 1. Først må vi lage et rektangel som kan følge datamusa vår (eller bevege seg når vi trykker)
 
 #### Nyttige funksjoner og tips
@@ -46,6 +47,7 @@ if(posisjonen til ballen == en av sidene){
 3. Sweet! Nå har vi en bar som beveger seg, og vi har en ball som spretter rundt. Nå må vi lage noe som kan sjekke om ballen har truffet baren vår. 
    TIPS: Dette blir veldig likt punkt 2, men vi må passe på at vi bruker riktig posisjon for baren.  
 
+<br>
 <br>
 <br>
 4. Almost there. Til slutt må vi lage en "GAME OVER" screen som vises når vi taper (ballen er under baren vår). Tipset her er å lage en `boolean gameover = false`, og en if-setning som sjekker om dette er sant. Er det usant så kjører vi spillet, hvis ikke så tegner vi en "GAMEOVER" screen.  
