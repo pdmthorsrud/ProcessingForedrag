@@ -7,13 +7,6 @@
 1. Før vi begynner må vi laste inn noen bilder, og sette størrelsen på skjermen vår. Bilder kan lagres i variabeltypen `PImage`. Du kan copypaste koden nedenfor. Kopier linken for å se bildene.
 
 #### Nyttige funksjoner og tips
-* Bildekode:
-``` processing
-PImage backImg =loadImage("http://i.imgur.com/cXaR0vS.png");
-PImage birdImg =loadImage("http://i.imgur.com/mw0ai3K.png");
-PImage wallImg =loadImage("http://i.imgur.com/4SUsUuc.png");
-PImage startImg=loadImage("http://i.imgur.com/U6KEwxe.png");
-```
 * Copypaste denne koden til å starte med. Vi skal gå gjennom hva alt brukes til.
 
 ``` processing
@@ -86,5 +79,47 @@ if(imageX == -1800){
 
 <br>
 <br>
-7. Det vi nå mangler er hindre som vi skal komme gjennom, og en måte å få fuglen vår til å fly på. Vi begynner med hindrene. For å spare tid vil jeg her gi deg koden, men er det noe du ikke skjønner så rop på en av lærerne! Denne koden kan limes inn rett under 
+7. Det vi nå mangler er hindre som vi skal komme gjennom, og en måte å få fuglen vår til å fly på. Vi begynner med hindrene. For å spare tid vil jeg her gi deg koden, men er det noe du ikke skjønner så rop på en av lærerne! 
+#### Nyttige funksjoner og tips
+* Denne koden kan limes inn rett under koden for fuglen din.
+
+``` processing
+//This draws the two walls. Notice that there's always two walls visible
+//in our game.
+for(int i = 0 ; i < 2; i++) {
+  imageMode(CENTER);
+  //Places two walls with a space of 200 pixels between them.
+  image(wallImg, wx[i], wy[i] - (wallImg.height/2+100));
+  image(wallImg, wx[i], wy[i] + (wallImg.height/2+100));
+
+  //When one pair of walls goes out of the picture on the left,
+  //we create a new pair of walls that start at the right side
+  //(wx[i] = width), and with a randomly placed hole
+  //(wy[i] = (int)random(200,height-200)).
+  if(wx[i] < 0) {
+    wy[i] = (int)random(200,height-200);
+    wx[i] = width;
+  }
+
+  //If a wall is at the middle point, it means the bird is about to
+  //"pass" the wall.
+  if(wx[i] == width/2){
+    //We add to our score
+    score++;
+    //and we check if current score is higher than the highScore and set
+    //the highScore variable equal to the highest of the variables score
+    //and highScore
+    highScore = max(score, highScore);
+  }
+
+  //If we go off the screen, or we hit one of the walls, it's gameOver,
+  //and we set gamestate to 1
+  if(y>height || y<0 || (abs(width/2-wx[i])<25 && abs(y-wy[i])>100)){
+    gamestate=1;
+  }
+
+  //This moves the pair of walls to the left (just like bckimage)
+  wx[i] -= 6;
+}
+```
 
