@@ -41,6 +41,7 @@ void setup() {
 #### Nyttige funksjoner og tips
 * `imageMode(CORNER)`, bildene vi tegner vil ta utgangspunkt i hjørnet av bildet når vi bruker x og y.
 * `image(startImg, x-koordinat, y-koordinat)`  
+<br><br>
 
 3. Start med koden hvor man spiller. Først skal bakgrunnen og fuglen tegnes. Fuglen skal være alltid være i midten av skjermen, og kun bevege seg vertikalt (loddrett). Med andre ord vil fuglen sin x-koordinat alltid være `width/2`. Å tegne bakgrunnsbildet er litt vanskeligere da vi skal få bildet til å bevege seg bortover. Trikset er å bruke `imageX` fra tidligere i koden vår. Hvis vi setter `imageMode(CORNER)` og deretter tegner bildet med `image(backImg, imageX, 0)` får vi et bilde som vil dekke skjermen vår.  
 
@@ -48,6 +49,7 @@ void setup() {
 * `imageMode(CORNER)`
 * `image(backImg, x-koordinat, y-koordinat)`
 * `image(birdImg, x-koordinat, y-koordinat)`  
+<br><br>
 
 4. Bevegelse kan vi skape ved å legge til linjen `imageX = imageX-6` etter vi har tegnet bildet. Neste gang vi kjører gjennom `draw()` og kjører koden `image(backImg, imageX, 0)` vil vi tegne bildet vårt 6 pixler lenger til venstre. Neste gang 12 pixler til venstre, osv. Lar du programmet ditt nå kjøre lenge nok vil du se at bildet før eller siden slutter. Bildet vårt er derimot tegnet slik at start og slutt passer sammen, og vi kan derfor tegne et nytt bilde på enden med `image(backImg, imageX + backImg.width, 0)`. For å spare tid kan du kopiere koden nedenfor. Se om du skjønner hvorfor vi trenger if-setningen!  
 
@@ -61,10 +63,13 @@ if(imageX == -1800){
   imageX=0;
 }
 ```  
+<br><br>
 
 5. Neste på lista er fuglen vår. Slik det er nå står den stille, men den skal jo falle. Her bruker vi samme metode som i punkt 3.  
+<br><br>
 
 6. Så fuglen vår faller, men den faller veldig stødig. Gravitasjon er en flott ting som også trengs i spill. Hvis vi skal oversette gravitasjon til "spillspråk" kan man si at det er en kraft som øker hastigheten til et objekt for hver gang vi kjører gjennom `void draw()` metoden vår. Vi må andre ord øke hvor "mye" fuglen faller med, for hver gang vi kjører gjennom. Se om du klarer å løse problemet, hvis ikke kan du spørre en av lærerne om hint!  
+<br><br>
 
 7. Det vi nå mangler er hindre som vi skal komme gjennom, og en måte å få fuglen vår til å fly på. Vi begynner med hindrene. For å spare tid vil jeg her gi deg koden, men er det noe du ikke skjønner så rop på en av lærerne!  
 
