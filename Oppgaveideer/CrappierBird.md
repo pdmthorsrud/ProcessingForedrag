@@ -25,9 +25,9 @@ PImage startImg;
 boolean gameover = true
 int score = 0
 int highScore = 0
-int birdX = 0, 
-int birdY=height/2, 
+int birdY = height/2, 
 int vbirdY = 0;
+int imageX = 0, 
 int wx[] = {600, 900};
 int wy[] = {300, 600};
 
@@ -44,8 +44,14 @@ void setup() {
 
 <br>
 <br>
-2. Neste steg er å lage to "gamestates". En for startImg og en for når vi spiller. Bruk en boolean som representerer gameover eller ikke gameover, deretter bruk en if-setning som gjør det slik at vi enten tegner startImg eller kjører "spillkoden".  
+2. Fra nå av skal vi holde oss inne i draw-metoden vår. Første steg er å lage en if-setning som sjekker om det er gameover. Er det gameover så vil vi tegne startImg på skjermen.  
+
+#### Nyttige funksjoner og tips
+* `imageMode(CORNER)`, bildene vi tegner vil ta utgangspunkt i hjørnet av bildet når vi bruker x og y.
+* `image(startImg, x-koordinat, y-koordinat)`
+
+
 
 <br>
 <br>
-3. La oss begynne med koden hvor vi spiller. Begynn med å tegne bakgrunnen og fuglen vår. Fuglen skal være i midten av skjermen, og vil alltid bevege 
+3. La oss starte med koden hvor vi spiller. Først tegner vi bakgrunnen og fuglen vår. Fuglen skal være i midten av skjermen, og vil alltid bevege seg opp og ned i midten. Med andre ord vil fuglen sin x-koordinat alltid være `width/2`. Å tegne bakgrunnsbildet er litt vanskeligere da vi skal få bildet til å bevege seg bortover. Trikset er å bruke `imageX` fra tidligere i koden vår. Hvis vi setter `imageMode(CENTER)` og deretter tegner bildet med `image(backImg, imageX, 0)` får vi et bilde som vil dekke skjermen vår. Bevegelse kan vi skape ved å legge til linjen `x = x-6` etter vi har tegnet bildet. Neste gang vi kjører gjennom `draw()` og kjører koden `image(backImg, imageX, 0)` vil vi tegne bildet vårt 6 pixler lenger til venstre. Neste gang 12 pixler til venstre, osv.
